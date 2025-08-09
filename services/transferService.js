@@ -4,7 +4,7 @@ const userService = require('../services/userService');
 function createTransfer({ from, to, amount }) {
   const sender = db.users.find(u => u.id === from);
   const recipient = db.users.find(u => u.id === to);
-  if (!sender || !recipient) return { error: 'Usuário not encontrado' };
+  if (!sender || !recipient) return { error: 'Usuário não encontrado' };
 
   // Regra: só pode transferir acima de 5.000 para favorecido
   const isFavorecido = sender.favorecidos.includes(to);
